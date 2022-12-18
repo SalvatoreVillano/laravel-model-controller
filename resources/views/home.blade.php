@@ -17,15 +17,40 @@
 
 <body>
 
-    <ul>
-        @forelse ($movies as $key=>$movie)
-            <li>
-                {{ $key }} - {{ $movie->title }}
-            </li>
-        @empty
-            <p>No Movies</p>
-        @endforelse
-    </ul>
+    <div class="container">
+        <div class="row">
+            @forelse ($movies as $key=>$movie)
+                <div class="col-4 my-4">
+                    <div class="card h-100">
+                        <img src="{{ $movie->image }}" class="card-img-top" alt="{{ $movie->title }}">
+                        <div class="card-body">
+                            <p class="card-title fs-4 fw-bold">
+                                {{ $movie->title }}
+                            </p>
+                            <p class="card-text">
+                                Data uscita:
+                                {{ $movie->date }}
+                            </p>
+                            <p class="card-text">
+                                Nazionalita':
+                                {{ $movie->nationality }}
+                            </p>
+                            <p class="card-text">
+                                Voto:
+                                {{ $movie->vote }} / 10
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            @empty
+                <p>No Movies</p>
+            @endforelse
+        </div>
+    </div>
+
+
+
 
 </body>
 
