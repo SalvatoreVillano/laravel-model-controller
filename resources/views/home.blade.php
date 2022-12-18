@@ -17,7 +17,15 @@
 
 <body>
 
-
+    <ul>
+        @forelse ($movies as $key=>$movie)
+            <li>
+                {{ $key }} - {{ $movie->title }}
+            </li>
+        @empty
+            <p>No Movies</p>
+        @endforelse
+    </ul>
 
 </body>
 
