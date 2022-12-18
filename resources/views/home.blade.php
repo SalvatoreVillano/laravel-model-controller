@@ -29,7 +29,7 @@
                             </p>
                             <p class="card-text">
                                 Data uscita:
-                                {{ $movie->date }}
+                                {{ date('d/m/Y', strtotime($movie->date)) }}
                             </p>
                             <p class="card-text">
                                 Nazionalita':
